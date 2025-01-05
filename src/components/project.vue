@@ -1,7 +1,6 @@
 <template>
   <section>
-    <p id="project" class="section__text__p1 text-center mt-5">Have a look at </p></p>
-    <h1 class="title text-center mb-5"> My Projects</h1>
+    <Heading :title="'My Projects'" :subtitle="'Have a look at'" />
     
     <div class="container">
       <VueSlickCarousel
@@ -107,10 +106,11 @@
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+  import Heading from "./common/heading.vue";
  
   export default {
     name: 'MyComponent',
-    components: { VueSlickCarousel },
+    components: { VueSlickCarousel, Heading },
     methods: {
       viewUrl(url) {
         window.location.href = url;

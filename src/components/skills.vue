@@ -1,7 +1,6 @@
 <template>
   <section>
-    <p id="skills" class="section__text__p1 text-center mt-5">Explore My</p>
-    <h1 class="title text-center mb-5"> Practical Skills</h1>
+    <Heading :title="'Practical Skills'" :subtitle="'Explore My'" />
     <div class="container">
       <div class="d-flex justify-content-center flex-wrap">
         <article
@@ -14,15 +13,13 @@
         >
           
           <h3>
-            <i :class="[skill.iconClass, 'mr-2']"></i>
+            <img 
+              :src="`/icons/${skill.imageSrc}.png`" 
+              class="skill-image mr-3"
+            />
+
             {{ skill.name }}
           </h3>
-          <p 
-            class="skill-level badge badge-primary"
-            v-if="skill.showLevel"
-          >
-            {{ skill.level }}
-          </p>
         </article>
       </div>
      
@@ -31,18 +28,24 @@
 </template>
 
 <script>
+import Heading from "./common/heading.vue";
 export default {
+  components: {
+    Heading,
+  },
   data() {
     return {
       skills: [
-        { name: 'HTML', iconClass: 'fa-brands fa-html5', level: 'Experienced' ,showLevel: false  },
-        { name: 'CSS', iconClass: 'fa-brands fa-css3-alt', level: 'Experienced' },
-        { name: 'Bootstrap', iconClass: 'fa-brands fa-bootstrap', level: 'Intermediate' },
-        { name: 'SASS', iconClass: 'fa-brands fa-sass', level: 'Experienced' },
-        { name: 'JavaScript', iconClass: 'fa-brands fa-js', level: 'Intermediate' },
-        { name: 'React', iconClass: 'fa-brands fa-react', level: 'Intermediate' },
-        { name: 'Vue', iconClass: 'fa-brands fa-vuejs', level: 'Intermediate' },
-        { name: 'Rails', iconClass: 'fa-solid fa-diamond', level: 'Intermediate' },
+        { name: 'HTML', imageSrc: 'html',  level: 'Experienced', showLevel: false  },
+        { name: 'CSS', imageSrc: 'css', level: 'Experienced' },
+        { name: 'Bootstrap', imageSrc: 'bootstrap', level: 'Intermediate' },
+        { name: 'SASS', imageSrc: 'sass', level: 'Experienced' },
+        { name: 'JavaScript', imageSrc: 'js', level: 'Intermediate' },
+        { name: 'React', imageSrc: 'react', level: 'Intermediate' },
+        { name: 'Vue', imageSrc: 'vue', level: 'Intermediate' },
+        { name: 'Rails', imageSrc: 'ruby', level: 'Intermediate' },
+        { name: 'Python', imageSrc: 'python', level: 'Intermediate' },
+        { name: 'AWS services', imageSrc: 'aws', level: 'Intermediate' },
       ],
     };
   },
@@ -65,12 +68,8 @@ article {
   gap: 0.5rem;
 
 }
-.skill-level {
-  display: none;
+.skill-image{
+  height:30px;
+  width:30px;
 }
-
-article:hover .skill-level {
-  display: block;
-}
-
 </style>

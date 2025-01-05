@@ -1,5 +1,6 @@
 <template>
   <section id="about" class="container">
+    <Heading :title="'About Me'" :subtitle="'Want to know me'" />
 
     <div class="section-container row">
       <div data-aos="fade-right" data-aos-duration="1000" class="section__pic-container col-sm-12 col-lg-4">
@@ -15,7 +16,7 @@
           <div class="details-container" @mouseover="setActiveSection('experience')">
             <i class="fa-solid fa-award"></i>
             <h3>Experience</h3>
-            <p>1.5+ years</p>
+            <p>{{ calculatedExperience }}+ year(s)</p>
           </div>
           <div class="details-container" @mouseover="setActiveSection('education')">
             <i class="fa-solid fa-school"></i>
@@ -40,11 +41,26 @@
 </template>
 
 <script>
+import Heading from "./common/heading.vue";
 export default {
+  components: {
+    Heading,
+  },
   data() {
     return {
       activeSection: 'experience',
+      startDate: "2022-07-01"
     };
+  },
+  computed: {
+    calculatedExperience() {
+      const startDate = new Date(this.startDate);
+      const currentDate = new Date();
+      const yearsDifference = currentDate.getFullYear() - startDate.getFullYear();
+      const isFullYear = currentDate.getMonth() >= startDate.getMonth() && currentDate.getDate() >= startDate.getDate();
+
+      return isFullYear ? yearsDifference : yearsDifference - 1;
+    },
   },
   methods: {
     setActiveSection(section) {

@@ -7,15 +7,6 @@
     <Project/>
     <Contact />
     <CanvasAnimation />
-
-    <button
-      id="back-to-top"
-      class="p-3 rounded-circle"
-      v-show="isScrollDown"
-      @click="scrollToTop"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </button>
   </div>
 </template>
 
@@ -46,17 +37,6 @@ export default {
       darkMode: sessionStorage.getItem('darkMode') === 'true',
     };
   },
-  methods: {
-    scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      } );
-    },
-    handleScroll() {
-      this.isScrollDown = window.scrollY > 0;
-    },
-  },
   mounted() {
     Zoomtastic.mount({
       size: '95%',
@@ -68,13 +48,8 @@ export default {
     });
 
     Zoomtastic.listen('[zoomtastic]', 'src');
-    window.addEventListener("scroll", this.handleScroll);
-
 
     AOS.init();
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -98,21 +73,6 @@ export default {
   background-color: lightgrey;
 }
 
-#back-to-top {
-  position: fixed;
-  bottom: 35px;
-  right: 35px;
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
 .dark-mode {
   background: black;
   color:white;
@@ -126,10 +86,6 @@ export default {
   }
   .btn, .btn-color-2{
     color: white !important;
-  }
-
-  .footer {
-    background: linear-gradient(to top, rgba(18, 41, 115, 1) 40%, rgba(53, 134, 255, 1) 80%);
   }
 }
 

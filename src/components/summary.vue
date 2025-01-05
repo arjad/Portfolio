@@ -1,13 +1,14 @@
 <template>
   <section id="summary" class="section section_1 py-5 w-100 row">
     <div data-aos="fade-right" data-aos-duration="1000" class="section__text text-center px-3 py-5 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center flex-column">
-      <p>Assalam-o-Alaikum! I'm</p>
+      <p>Hey! I'm</p>
       <h1>Arjad Gohar</h1>
       <vue-typer text='FullStack Developer'></vue-typer>
       <p class="intro-para mt-2"> 
-        I have 1.5 years of experience in this field. I currently work at Coding Cops, where I've had the opportunity
-        to contribute to various projects. My skills include working with Vue.js, React.js, Ruby on Rails, HTML, CSS (including Bootstrap), and HTML/HAML.
-        I'm passionate about creating effective and innovative solutions and am eager to bring my expertise to new challenges.
+        I am a skilled software developer delivering high-quality solutions across diverse projects. My expertise spans front-end and back-end development, including Vue.js, React.js, Ruby on Rails and Python.
+      </p>
+      <p class='intro-para'>
+        I specialize in creating user-friendly interfaces and scalable systems to meet client needs. My passion lies in solving complex challenges with and effective solutions.
       </p>
       <div class="btn-container mt-3">
         <button
@@ -25,8 +26,12 @@
         <i class="icon fa-brands fa-github" @click="redirectTo('https://github.com/arjad')"></i>
       </div>
     </div>
-    <div class="pic_container col-lg-6 col-sm-12 d-flex justify-content-center">
-      <img data-aos="fade-left" data-aos-duration="1000" zoomtastic src="../assets/me.jpeg" alt="profile pic" />
+    <div class="pic_container col-lg-6 col-sm-12 d-flex justify-content-center alig-items-center">
+      <div class='pic_container_inner'>
+        <div class='green-bg'></div>
+        <img data-aos="fade-left" data-aos-duration="1000" zoomtastic src="../assets/me.png" alt="profile pic" />
+      </div>
+
     </div>
   </section>
 </template>
@@ -55,13 +60,24 @@ export default {
   }
 }
 .pic_container {
-  height: 100%;
   height: 75vh;
 
-  display: flex;
-  position: relative;
-  img {
-    border-radius: 20px;
+.pic_container_inner {
+    height: 58vh;
+    width: 360px;
+    position: relative;
+    .green-bg{
+      position: absolute;
+      height:350px;
+      width:350px;
+      bottom: 20px;
+      border-radius:50%;
+      background: #47BA87;
+    } 
+
+    img {
+      border-radius: 20px;
+    }
   }
 }
 
