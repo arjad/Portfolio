@@ -13,7 +13,7 @@
       <div class="btn-container mt-3">
         <button
           class="btn btn-color-2 btn-black"
-          onclick="location.href='https://drive.google.com/file/d/1ap1oWInMIGNRwLB9OEoRwb_93H4S6mPQ/view?usp=drive_link'"
+          onclick="location.href='https://drive.google.com/file/d/1I24YNY6zHmmT7MtJzKVGk1kLrqlBnT3a/view?usp=sharing'"
         >
           View Resume
         </button>

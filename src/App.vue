@@ -6,6 +6,8 @@
     <Skills />
     <Project/>
     <Contact />
+
+    <ChatBot/>
     <CanvasAnimation />
   </div>
 </template>
@@ -20,6 +22,7 @@ import Contact from "./components/contact.vue";
 import CanvasAnimation from "./components/features/canvas.vue";
 import { onMounted } from "vue";
 import AOS from "aos";
+import ChatBot from "./components/features/chatbot.vue";
 
 export default {
   components: {
@@ -29,6 +32,7 @@ export default {
     Skills,
     Project,
     Contact,
+    ChatBot,
     CanvasAnimation,
   },
   data() {
@@ -60,7 +64,6 @@ export default {
   padding: 0;
   font-family: "Segoe UI", Tahoma;
   transition: width 1s ease, height 1s ease, background-color 1s ease;
-
 }
 ::-webkit-scrollbar {
   width: 15px;
