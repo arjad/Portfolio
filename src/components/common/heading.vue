@@ -31,5 +31,11 @@ export default {
 </script>
 
 <style scoped>
+#heading-comp{
+  h1{
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+  }
+}
 
 </style>
