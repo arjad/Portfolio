@@ -60,8 +60,9 @@
         <li class="p-2 social-icon__item scroll-to">Contact</li>
       </ul>
     </div>
-    <p class="text-white text-right pr-3"> 
-      <a onclick="location.href='https://github.com/arjad/Portfolio'"> <b> View Code here </b></a>
+    <hr/>
+    <p class="text-center border-1 cursor"> 
+      <a onclick="location.href='https://github.com/arjad/Portfolio'"> <b> Made with Vue JS </b></a>
     </p>
   </footer>
 </template>
@@ -86,7 +87,7 @@ export default {
 }
 .footer-me{
   height:100%;
-  width:600px;
+  width:45rem;
   opacity:0.1;
   position: absolute;
   right: 0px;
@@ -109,5 +110,8 @@ export default {
 }
 .social-icon__link:hover {
   transform: translateY(-10px);
+}
+.cursor{
+  cursor: pointer;
 }
 </style>

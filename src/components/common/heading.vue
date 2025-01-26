@@ -33,5 +33,9 @@ export default {
 <style scoped>
   #heading-comp{
     margin-top:100px;
+    h1{
+      font-family: 'Helvetica', sans-serif;
+      font-weight: bold;
+    }
   }
 </style>

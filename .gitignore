@@ -3,7 +3,6 @@ node_modules
 /dist
 
 # local env files
-.env.local
 .env.*.local
 
 # Log files
@@ -22,3 +21,4 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+config.bat
