@@ -31,5 +31,7 @@ export default {
 </script>
 
 <style scoped>
-
+  #heading-comp{
+    margin-top:100px;
+  }
 </style>

@@ -5,6 +5,7 @@
     <About />
     <Skills />
     <Project/>
+    <WriteMe/>
     <Contact />
     <CanvasAnimation />
   </div>
@@ -17,6 +18,7 @@ import About from "./components/about.vue";
 import Skills from "./components/skills.vue";
 import Project from "./components/project.vue";
 import Contact from "./components/contact.vue";
+import WriteMe from "./components/writeMe.vue";
 import CanvasAnimation from "./components/features/canvas.vue";
 import { onMounted } from "vue";
 import AOS from "aos";
@@ -29,6 +31,7 @@ export default {
     Skills,
     Project,
     Contact,
+    WriteMe,
     CanvasAnimation,
   },
   data() {
@@ -74,7 +77,7 @@ export default {
 }
 
 .dark-mode {
-  background: black;
+  background: #0D1117;
   color:white;
   #navigation{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
