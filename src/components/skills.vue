@@ -11,7 +11,6 @@
           @mouseover="toggleSkillLevel(index, true)"
           @mouseout="toggleSkillLevel(index, false)"
         >
-          
           <h3>
             <img 
               :src="`/icons/${skill.imageSrc}.png`" 
@@ -36,16 +35,20 @@ export default {
   data() {
     return {
       skills: [
-        { name: 'HTML', imageSrc: 'html',  level: 'Experienced', showLevel: false  },
-        { name: 'CSS', imageSrc: 'css', level: 'Experienced' },
-        { name: 'Bootstrap', imageSrc: 'bootstrap', level: 'Intermediate' },
-        { name: 'SASS', imageSrc: 'sass', level: 'Experienced' },
-        { name: 'JavaScript', imageSrc: 'js', level: 'Intermediate' },
-        { name: 'React', imageSrc: 'react', level: 'Intermediate' },
-        { name: 'Vue', imageSrc: 'vue', level: 'Intermediate' },
-        { name: 'Rails', imageSrc: 'ruby', level: 'Intermediate' },
-        { name: 'Python', imageSrc: 'python', level: 'Intermediate' },
-        { name: 'AWS services', imageSrc: 'aws', level: 'Intermediate' },
+        { name: 'HTML', imageSrc: 'html' },
+        { name: 'CSS', imageSrc: 'css' },
+        { name: 'Bootstrap', imageSrc: 'bootstrap' },
+        { name: 'SASS', imageSrc: 'sass' },
+        { name: 'Tailwind', imageSrc: 'tailwind' },
+        { name: 'JavaScript', imageSrc: 'js' },
+        { name: 'React', imageSrc: 'react' },
+        { name: 'Vue', imageSrc: 'vue' },
+        { name: 'Vite', imageSrc: 'vite' },
+        { name: 'Rails', imageSrc: 'ruby' },
+        { name: 'Python', imageSrc: 'python' },
+        { name: 'AWS services', imageSrc: 'aws' },
+        { name: 'Git', imageSrc: 'git' },
+        { name: 'GitHub', imageSrc: 'github' },
       ],
     };
   },
