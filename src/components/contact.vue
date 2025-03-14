@@ -1,20 +1,20 @@
 <template>
-    <footer class="text-center mt-5 text-lg-start text-white" id="contact">
+    <footer class="text-center mt-5 text-lg-start" id="contact">
         <section class="row">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Contact Details</h6>
               <p>
-                <a class="text-white" href="https://www.linkedin.com/in/arjad/" target="_blank">
+                <a href="https://www.linkedin.com/in/arjad/" target="_blank">
                   <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
               </p>
               <p>
-                <a class="text-white" href="https://github.com/arjad" target="_blank">
+                <a href="https://github.com/arjad" target="_blank">
                   <i class="fab fa-github"></i> GitHub
                 </a>
               </p>
               <p>
-                <a class="text-white" href="mailto:arjadgohar14@gmail.com">
+                <a href="mailto:arjadgohar14@gmail.com">
                   <i class="fas fa-envelope"></i> arjadgohar14@gmail.com
                 </a>
               </p>
