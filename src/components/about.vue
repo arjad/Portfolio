@@ -38,8 +38,20 @@
           <span class="badge rounded-pill px-3 py-2 mx-2 border border-dark">React JS</span>
         </div>
 
+        <h4 class='text-green'> Freelancer - 2019-2021 </h4>
+        <h6> <a class='text-blue'href= 'https://www.upwork.com/freelancers/~01a73a1abd70f9f27f'>Upwork </a> </h6>
+        <ul>
+          <li> Developed key features and resolved bugs for web applications using React, Vue.js, and Ruby on Rails. </li>
+          <li>Continuously enhancing skills by pursuing certifications in AWS, DevOps & Python. </li>
+        </ul>
+        <div class="skills mb-5">
+          <span class="badge rounded-pill px-3 py-2 mx-2 border border-dark">Front End Optimization</span>
+          <span class="badge rounded-pill px-3 py-2 mx-2 border border-dark">AWS Deployment</span>
+          <span class="badge rounded-pill px-3 py-2 mx-2 border border-dark">Backend Optimization</span>
+        </div>
       </div>
     </div>
+    <br/>
 
     <div class="position-relative mt-5">
       <div class="verticle-line position-absolute"></div>
@@ -68,7 +80,7 @@ export default {
   data() {
     return {
       activeSection: 'experience',
-      startDate: "2022-07-01"
+      startDate: "2019-01-01"
     };
   },
   computed: {

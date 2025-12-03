@@ -42,6 +42,7 @@ export default {
         { name: 'Tailwind', imageSrc: 'tailwind' },
         { name: 'JavaScript', imageSrc: 'js' },
         { name: 'React', imageSrc: 'react' },
+        { name: 'Next', imageSrc: 'next' },
         { name: 'Vue', imageSrc: 'vue' },
         { name: 'Vite', imageSrc: 'vite' },
         { name: 'Rails', imageSrc: 'ruby' },
