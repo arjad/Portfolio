@@ -1,13 +1,7 @@
 <template>
   <div id="app" :class="{ 'dark-mode': darkMode }">
     <Nav />
-    <Summary />
-    <About />
-    <Skills />
-    <Project/>
-    <Journey />
-    <WriteMe/>
-    <Contact />
+    <router-view />
 
     <ChatBot/>
     <CanvasAnimation />
@@ -16,13 +10,6 @@
 
 <script>
 import Nav from "./components/nav.vue";
-import Summary from "./components/summary.vue";
-import About from "./components/about.vue";
-import Skills from "./components/skills.vue";
-import Project from "./components/project.vue";
-import Journey from "./components/journey.vue";
-import Contact from "./components/contact.vue";
-import WriteMe from "./components/writeMe.vue";
 import ChatBot from "./components/features/chatbot.vue";
 import CanvasAnimation from "./components/features/canvas.vue";
 import { onMounted } from "vue";
@@ -31,14 +18,6 @@ import AOS from "aos";
 export default {
   components: {
     Nav,
-    Summary,
-    About,
-    Skills,
-    Project,
-    Journey,
-    Contact,
-    WriteMe,
-
     ChatBot,
     CanvasAnimation,
   },

@@ -1,7 +1,7 @@
 <template>
   <div id="navigation" class="py-3 shadow nav">
     <div class="container d-flex- justify-content-between">
-      <h2 class="d-inline">Arjad's Portfolio</h2>
+      <h2 class="d-inline" style="cursor: pointer" @click="$route.path !== '/' ? $router.push('/') : null">Arjad's Portfolio</h2>
       <ul class="d-flex mb-0">
         <li class="p-2 scroll-to" @click="scrollToSection('summary')">Summary</li>
         <li class="p-2 scroll-to" @click="scrollToSection('about')">About</li>
@@ -41,9 +41,13 @@ export default {
       }
     },
     scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (this.$route.path !== '/') {
+        this.$router.push({ path: '/', hash: '#' + sectionId });
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   },
