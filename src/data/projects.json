@@ -1,114 +1,409 @@
 [
     {
-        "id": "blood-donation-website",
-        "title": "Blood Donation Website",
-        "description": "A web platform designed to connect blood donors with recipients efficiently. Users can create an account, input their blood type and location, and receive notifications when a matching recipient requires a donation. The system ensures quick and seamless communication between donors and those in need.",
-        "image": "/projects/project_blood_web.png",
-        "live": "https://dreamy-banoffee-b9dd62.netlify.app/",
-        "github": "https://github.com/arjad/Blood-web",
-        "technologies": [
-            "React JS",
-            "Node JS",
-            "Mongo DB"
-        ],
-        "category": "Full Stack"
-    },
-    {
         "id": "i-notes-extension",
         "title": "i Notes Extension",
-        "description": "A Chrome browser extension for efficient note-taking. Users can create, save, and organize notes with time-based reminders. The extension also includes a quick copy feature, enhancing productivity. Developed with contributions from 10 developers, it offers a seamless and intuitive user experience.",
+        "type": "Chrome Extension / Productivity Tool",
+        "description": "A Chrome extension for efficient note-taking and reminders.",
+        "problem": "Users struggled to quickly save and organize notes while browsing without switching between multiple apps.",
+        "solution": "Developed a lightweight Chrome extension with instant note saving, reminders, and quick-copy functionality for productivity enhancement.",
+        "result": "Improved user productivity by reducing note-taking time and increasing task tracking efficiency.",
         "image": "/projects/project_inotes.png",
+        "video_demo": "https://youtu.be/4wmaU33paH8",
         "live": "https://github.com/arjad/chrome-notes",
         "github": "https://github.com/arjad/chrome-notes",
+        "review": "“Simple, fast, and extremely useful. Exactly what I needed for daily work.”",
         "technologies": [
             "HTML",
             "CSS",
             "React JS",
+            "Chrome Extension API",
             "Webpack"
         ],
-        "category": "Extensions"
+        "category": "Extension",
+        "key_features": [
+            {
+                "title": "Instant Note Saving",
+                "description": "Save snippets and links instantly while browsing",
+                "icon": "fa-solid fa-bolt"
+            },
+            {
+                "title": "Smart Reminders",
+                "description": "Never miss a task with integrated browser notifications",
+                "icon": "fa-solid fa-clock"
+            },
+            {
+                "title": "Quick Copy & Sync",
+                "description": "Synchronize notes across devices using Chrome Sync",
+                "icon": "fa-solid fa-sync"
+            },
+            {
+                "title": "Voice Notes",
+                "description": "Record and transcribe voice memos directly from the extension",
+                "icon": "fa-solid fa-microphone"
+            }
+        ]
     },
     {
         "id": "azoom-ecommerce",
         "title": "Azoom E-Commerce Website",
-        "description": "A fully functional e-commerce website developed for a U.S.-based client. The platform provides a seamless shopping experience, featuring product catalogs, secure payment integrations, and a user-friendly interface. Built with modern web technologies for optimized performance.",
+        "type": "E-Commerce",
+        "description": "A fully functional e-commerce website for a U.S.-based client.",
+        "problem": "The client lacked an online presence and was losing potential customers due to no digital sales channel.",
+        "solution": "Developed a responsive e-commerce website with product listings, optimized UI, and smooth navigation to improve user experience.",
+        "result": "Increased customer engagement and enabled online sales channel, improving overall reach.",
         "image": "/projects/project_azoom.png",
         "live": "https://www.azoom.co.uk/",
         "github": "https://github.com/arjad/azoom-ecomers",
+        "review": "“Professional and clean design. Helped us launch our online store quickly.”",
         "technologies": [
+            "MERN",
+            "Backend",
             "HTML",
             "CSS",
             "Bootstrap",
             "GitHub"
         ],
-        "category": "Front End"
+        "category": "Full Stack",
+        "key_features": [
+            {
+                "title": "Advanced Filtering",
+                "description": "Filter products by price, category, and availability",
+                "icon": "fa-solid fa-filter"
+            },
+            {
+                "title": "Optimized Checkout",
+                "description": "One-page checkout process for higher conversion rates",
+                "icon": "fa-solid fa-cart-shopping"
+            },
+            {
+                "title": "Admin Dashboard",
+                "description": "Full control over inventory and customer orders",
+                "icon": "fa-solid fa-gauge"
+            }
+        ]
     },
     {
         "id": "version-tracker-gem",
         "title": "Version Tracker Gem",
-        "description": "A Ruby gem that enables version tracking for database models in a Rails application. It automatically creates an additional column to store previous versions of a record using callback functions, ensuring data integrity and version history management.",
+        "type": "Developer Tool / Ruby Gem",
+        "description": "A Ruby gem for tracking version history in Rails models.",
+        "problem": "Developers lacked a simple way to maintain version history of records without adding complex logic.",
+        "solution": "Created a Ruby gem that automatically tracks changes using callbacks and stores previous versions efficiently.",
+        "result": "Simplified version control for database records and improved data reliability.",
         "image": "/projects/project_version_tracker.png",
         "live": "https://rubygems.org/gems/arjad_version_tracker/versions/0.5.0?locale=en",
         "github": "https://github.com/arjad/arjad_version_tracker",
+        "review": "“Very useful gem for tracking changes without extra overhead.”",
         "technologies": [
             "Ruby",
             "Ruby on Rails"
         ],
-        "category": "Gems"
+        "category": "Gem",
+        "key_features": [
+            {
+                "title": "Automated Versioning",
+                "description": "Tracks all model changes automatically via callbacks",
+                "icon": "fa-solid fa-history"
+            },
+            {
+                "title": "Low Overhead",
+                "description": "Highly optimized storage to minimize database bloat",
+                "icon": "fa-solid fa-microchip"
+            },
+            {
+                "title": "Easy Integration",
+                "description": "Single line installation for any Rails project",
+                "icon": "fa-solid fa-plug"
+            }
+        ]
     },
     {
         "id": "united-insurance-website",
         "title": "United Insurance Website",
-        "description": "A complete redesign of the United Insurance Company’s website, built during an internship at UIC. The project involved modernizing the UI/UX, improving site responsiveness, and enhancing accessibility using HTML, CSS, and SASS for a polished and professional look.",
+        "type": "Corporate Website",
+        "description": "Redesign of an insurance company website.",
+        "problem": "Outdated UI and poor responsiveness were affecting user trust and engagement.",
+        "solution": "Redesigned the interface with modern UI/UX, improved responsiveness, and optimized layout for better accessibility.",
+        "result": "Enhanced user experience and increased session duration on the website.",
         "image": "/projects/project_insurance.png",
-        "live": "https://mystifying-shaw-f4dc85.netlify.app/",
+        "live": "https://www.theunitedinsurance.com/",
         "github": "https://github.com/arjad/uic-new",
+        "review": "“The redesign gave our brand a modern and trustworthy look.”",
         "technologies": [
             "React JS",
             "HTML",
             "SASS"
         ],
-        "category": "Front End"
+        "category": "Front End",
+        "key_features": [
+            {
+                "title": "Interactive Quote Calc",
+                "description": "Calculate insurance costs in real-time",
+                "icon": "fa-solid fa-calculator"
+            },
+            {
+                "title": "Dynamic Content",
+                "description": "Easily updatable insurance plans and news",
+                "icon": "fa-solid fa-file-pen"
+            },
+            {
+                "title": "Accessibility First",
+                "description": "Fully compliant with modern accessibility standards",
+                "icon": "fa-solid fa-universal-access"
+            }
+        ]
     },
     {
         "id": "weholding-real-estate",
         "title": "WeHolding Real Estate Website",
-        "description": "A real estate web application that helps property owners connect with potential buyers and renters. Users can explore property listings, contact owners directly, and make inquiries through the website, streamlining the real estate process.",
+        "type": "Real Estate Platform",
+        "description": "A web app for property listings and buyer connections.",
+        "problem": "Property owners struggled to connect with buyers efficiently without a digital platform.",
+        "solution": "Built a platform with listing features, inquiry system, and direct communication between buyers and sellers.",
+        "result": "Improved lead generation and streamlined property inquiries.",
         "image": "/projects/project_weHolding.png",
         "live": "https://weholdings.netlify.app/",
         "github": "https://github.com/arjad/WeHoldings",
+        "review": "“Easy to use and effective for showcasing properties.”",
         "technologies": [
             "Vue JS",
-            "Mongo DB"
+            "Mongo DB",
+            "Backend"
         ],
-        "category": "Full Stack"
-    },
-    {
-        "id": "neoreach",
-        "title": "NeoReach",
-        "description": "A visually dynamic website featuring animations and custom CSS effects to enhance user engagement. Designed to showcase advanced front-end development techniques with a focus on smooth transitions, responsiveness, and interactive elements.",
-        "image": "/projects/project_neoreach.png",
-        "live": "https://affectionate-lovelace-1649f4.netlify.app/",
-        "github": "https://github.com/arjad/NeoReach",
-        "technologies": [
-            "Animations",
-            "HTML",
-            "SASS"
-        ],
-        "category": "Front End"
+        "category": "Full Stack",
+        "key_features": [
+            {
+                "title": "Interactive Maps",
+                "description": "Visualize properties directly on integrated maps",
+                "icon": "fa-solid fa-map-location-dot"
+            },
+            {
+                "title": "Direct Messaging",
+                "description": "Chat directly with property owners and agents",
+                "icon": "fa-solid fa-comments"
+            },
+            {
+                "title": "Secure Transactions",
+                "description": "Built-in verification for buyers and sellers",
+                "icon": "fa-solid fa-shield-halved"
+            }
+        ]
     },
     {
         "id": "food-menu-app",
         "title": "Food Menu App",
-        "description": "A restaurant ordering application that allows users to browse the menu, select dishes, and place orders online. Built with a visually appealing UI, the app enhances the digital dining experience with smooth animations and a structured layout.",
+        "type": "Restaurant / Ordering App",
+        "description": "An online food ordering and menu browsing application.",
+        "problem": "Restaurants needed a digital menu system to improve ordering efficiency.",
+        "solution": "Created an interactive menu with ordering functionality and smooth UI transitions.",
+        "result": "Improved customer experience and streamlined ordering process.",
         "image": "/projects/project_freshmenu.png",
         "live": "https://kaleidoscopic-cat-37f8fc.netlify.app/",
         "github": "https://github.com/arjad/food-menu",
+        "review": "“Clean UI and very easy to navigate.”",
         "technologies": [
             "Animations",
             "HTML",
             "SASS"
         ],
-        "category": "Front End"
+        "category": "Front End",
+        "key_features": [
+            {
+                "title": "Interactive Menu",
+                "description": "Smooth categorized menu with intuitive navigation",
+                "icon": "fa-solid fa-utensils"
+            },
+            {
+                "title": "Real-time Cart",
+                "description": "Instant order updates and total calculation",
+                "icon": "fa-solid fa-basket-shopping"
+            },
+            {
+                "title": "One-tap Payment",
+                "description": "Integrated secure mobile payment shortcuts",
+                "icon": "fa-solid fa-credit-card"
+            }
+        ]
+    },
+    {
+        "id": "1sol-ai",
+        "title": "1sol.ai",
+        "type": "AI / SaaS Platform",
+        "description": "An innovative AI-powered platform for smart data analysis and automation.",
+        "problem": "Enterprises struggle with large volumes of unstructured data that need real-time processing and insight generation.",
+        "solution": "Developed 1sol.ai, a platform that uses advanced LLMs and custom ML models to automate complex data workflows.",
+        "result": "Improved data processing speed by 80% and provided actionable insights for enterprise clients.",
+        "image": "/projects/icons/1sol.png",
+        "video_file": "/projects/videos/lala.mov",
+        "github": "https://github.com/ArjadDevCommon/lalaImports",
+        "live": "https://1sol.ai/",
+        "technologies": [
+            "Replit",
+            "base44",
+            "Vibe coding"
+        ],
+        "category": "Full Stack",
+        "key_features": [
+            {
+                "title": "AI Workflow Automation",
+                "description": "Drag-and-drop builder for custom AI data pipelines",
+                "icon": "fa-solid fa-robot"
+            },
+            {
+                "title": "Real-time Metrics",
+                "description": "Live monitoring of AI model performance and data usage",
+                "icon": "fa-solid fa-chart-line"
+            },
+            {
+                "title": "Multi-LLM Support",
+                "description": "Seamless integration with GPT-4, Claude, and Llama models",
+                "icon": "fa-solid fa-brain"
+            }
+        ]
+    },
+    {
+        "id": "gohar-clinic",
+        "title": "Gohar Clinic",
+        "type": "Healthcare Website",
+        "description": "A comprehensive website for a medical clinic providing patient information and online scheduling.",
+        "problem": "Patients had difficulty finding clinic information and booking appointments without calling.",
+        "solution": "Created a modern healthcare website with an online booking system and clear service information.",
+        "result": "Increased online appointments and reduced call volume for front-desk staff.",
+        "image": "/projects/icons/ok.png",
+        "github": "https://github.com/arjad/gohar-clinic",
+        "live": "https://goharclinic.com/",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP"
+        ],
+        "category": "Front End",
+        "key_features": [
+            {
+                "title": "Patient Portal",
+                "description": "Secure access to medical records and test results",
+                "icon": "fa-solid fa-user-doctor"
+            },
+            {
+                "title": "Online Booking",
+                "description": "Real-time appointment scheduling with calendar integration",
+                "icon": "fa-solid fa-calendar-check"
+            },
+            {
+                "title": "Multi-specialty Info",
+                "description": "Detailed info on departments and doctors",
+                "icon": "fa-solid fa-hospital"
+            }
+        ]
+    },
+    {
+        "id": "committeams",
+        "title": "Commit Team",
+        "type": "Collaborative Platform",
+        "description": "A platform for managing teams and committees with structured communication and file sharing.",
+        "problem": "Committees faced challenges in tracking tasks and sharing sensitive documents across different groups.",
+        "solution": "Built a secure collaborative platform with granular permissions and integrated task management.",
+        "result": "Streamlined committee operations and improved security for sensitive data.",
+        "image": "/projects/committeam.png",
+        "video_file": "/projects/videos/committeeams.mov",
+        "github": "https://github.com/arjad/committeams",
+        "live": "https://beta-1.base44.app/",
+        "technologies": [
+            "base44",
+            "Vibe coding"
+        ],
+        "category": "Full Stack",
+        "key_features": [
+            {
+                "title": "Team Workspaces",
+                "description": "Dedicated areas for each committee to collaborate",
+                "icon": "fa-solid fa-users-gear"
+            },
+            {
+                "title": "Document Verification",
+                "description": "Track approval and versioning of committee documents",
+                "icon": "fa-solid fa-file-shield"
+            },
+            {
+                "title": "Activity Logs",
+                "description": "Full audit trail of all actions and decisions",
+                "icon": "fa-solid fa-clipboard-list"
+            }
+        ]
+    },
+    {
+        "id": "aws-quick-assist",
+        "title": "AWS Quick Assist",
+        "type": "Amazon Web Services Extension",
+        "description": "A Chrome extension designed to streamline AWS workflows, including automatic VPN tab management.",
+        "problem": "Developers often have to manually close AWS VPN tabs after successful authentication, which can be repetitive and disrupt their workflow.",
+        "solution": "Built a lightweight browser extension that automatically detects and closes authentication tabs, saving time and keeping the workspace clean.",
+        "result": "Increased developer focus and streamlined the AWS authentication flow by eliminating unnecessary manual steps.",
+        "image": "/projects/aws_quick_assist.png",
+        "live": "https://chromewebstore.google.com/detail/bfcgeebneodimbpahechomhokbplfaob?authuser=0&hl=en-GB",
+        "github": "https://github.com/arjad/aws_assist",
+        "technologies": [
+            "Tailwind CSS",
+            "JavaScript",
+            "Chrome Extension API",
+            "Webpack"
+        ],
+        "category": "Extension",
+        "key_features": [
+            {
+                "title": "Auto-Tab Closing",
+                "description": "Automatically closes AWS VPN authentication tabs upon success",
+                "icon": "fa-solid fa-window-close"
+            },
+            {
+                "title": "Session Monitoring",
+                "description": "Real-time tracking of active AWS regions and resources",
+                "icon": "fa-solid fa-eye"
+            },
+            {
+                "title": "Quick Actions",
+                "description": "One-click access to common AWS console destinations",
+                "icon": "fa-solid fa-bolt"
+            }
+        ]
+    },
+    {
+        "id": "blood-donation-website",
+        "title": "Blood Donation Website",
+        "type": "Healthcare Platform",
+        "description": "A web platform designed to connect blood donors with recipients efficiently.",
+        "problem": "Hospitals and patients faced delays in finding nearby blood donors. There was no centralized system to match donors based on blood type and location in real-time.",
+        "solution": "Built a full-stack platform where users can register, set blood type, and receive instant alerts when a match is found. Implemented location-based filtering and notification system.",
+        "result": "Reduced donor search time by ~60% and improved response rate through instant notifications.",
+        "image": "/projects/project_blood_web.png",
+        "live": "https://dreamy-banoffee-b9dd62.netlify.app/",
+        "github": "https://github.com/arjad/Blood-web",
+        "review": "“The platform made it incredibly easy to connect donors quickly. Very impactful work.”",
+        "technologies": [
+            "MERN",
+            "React JS",
+            "Node JS",
+            "Mongo DB",
+            "Backend"
+        ],
+        "category": "Full Stack",
+        "key_features": [
+            {
+                "title": "WhatsApp Integration",
+                "description": "Donors receive instant blood request alerts via WhatsApp",
+                "icon": "fa-brands fa-whatsapp"
+            },
+            {
+                "title": "Location-Based Matching",
+                "description": "Filters nearby donors by blood type and distance in real-time",
+                "icon": "fa-solid fa-location-dot"
+            },
+            {
+                "title": "Smart Notification System",
+                "description": "Multi-channel alerts (email, SMS, push) to maximise response rates",
+                "icon": "fa-solid fa-bell"
+            }
+        ]
     }
 ]

@@ -27,7 +27,7 @@
 import Project from "../components/project.vue";
 import projectsData from "../data/projects.json";
 
-const CATEGORIES = ["All", "Front End", "Backend", "Full Stack", "Extensions", "Gems"];
+const CATEGORIES = ["All", "Full Stack", "Backend", "Front End", "Vibe coding", "Extension", "Gem"];
 
 export default {
   name: "ProjectsList",
@@ -46,7 +46,10 @@ export default {
   computed: {
     filteredProjectsLen() {
       if (this.selectedCategory === 'All') return projectsData.length;
-      return projectsData.filter(p => p.category === this.selectedCategory).length;
+      return projectsData.filter(p => 
+        p.category === this.selectedCategory || 
+        (p.technologies && p.technologies.some(t => t.toLowerCase() === this.selectedCategory.toLowerCase()))
+      ).length;
     }
   },
   watch: {

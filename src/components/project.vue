@@ -9,8 +9,8 @@
         <div class="card-body shadow">
             <h5 class="card-title">{{ project.title }}</h5>
             <p class="card-text">{{ project.description }}</p>
-            <div class="mb-3">
-              <span v-for="(tech, i) in project.technologies" :key="i" class="badge rounded-pill px-3 py-2 mx-2 border border-dark">
+            <div class="d-flex flex-wrap mb-2">
+              <span v-for="(tech, i) in project.technologies" :key="i" class="badge rounded-pill px-3 py-2 mx-1 mb-2 border border-dark">
                 {{ tech }}
               </span>
             </div>
@@ -69,7 +69,10 @@
       displayedProjects() {
         let filtered = this.projects;
         if (this.categoryFilter && this.categoryFilter !== 'All') {
-          filtered = filtered.filter(p => p.category === this.categoryFilter);
+          filtered = filtered.filter(p => 
+            p.category === this.categoryFilter || 
+            (p.technologies && p.technologies.some(t => t.toLowerCase() === this.categoryFilter.toLowerCase()))
+          );
         }
         if (this.limit > 0) {
           return filtered.slice(0, this.limit);
