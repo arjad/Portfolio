@@ -127,14 +127,14 @@ ul {
 .verticle-line{
   width: 15px;
   height: 100%;
-  background: linear-gradient(to right, #47BA87 50%, #34495E 50%);
+  background: linear-gradient(to right, #a855f7 50%, #34495E 50%);
 }
 .verticle-line-right{
   right:0;
 }
 
 .text-green{
-  color: #47BA87;
+  color: #a855f7;
 }
 .text-blue{
   color: #34495E;

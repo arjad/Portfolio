@@ -176,7 +176,7 @@ export default {
   color: #fff;
   width: 100%;
   padding: 20px;
-  background: #47BA87;
+  background: #a855f7;
   font-size: 100%;
   font-weight: 600;
   border-radius: 6px;
@@ -185,10 +185,28 @@ export default {
 
 .submit:hover {
   cursor: pointer;
-  background: #47BA87;
+  background: #b76eff;
   transform: translateY(-2px);
 }
 </style>
+
+<style lang="scss">
+.dark-mode {
+  .email-input, .message {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+  .form-header {
+    color: #ffffff;
+  }
+  .container-div {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 16px 16px 8px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+</style>
+
 
 
 

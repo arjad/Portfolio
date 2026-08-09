@@ -40,13 +40,13 @@ export default {
 
 <style scoped>
 .btn-custom-green {
-  color: #47BA87;
-  border: 1px solid #47BA87;
+  color: #a855f7;
+  border: 1px solid #a855f7;
   background-color: transparent;
   transition: all 0.3s ease;
 }
 .btn-custom-green:hover {
-  background-color: #47BA87;
+  background-color: #a855f7;
   color: white;
 }
 </style>

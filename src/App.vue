@@ -66,9 +66,6 @@ export default {
 .dark-mode {
   background: #0D1117;
   color:white;
-  #navigation{
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
-  }
   .vue-typer {
     .custom.char {
       color: white;

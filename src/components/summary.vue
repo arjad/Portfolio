@@ -1,53 +1,83 @@
 <template>
-  <section id="summary" class="section section_1 py-5 w-100 row">
-    <div data-aos="fade-right" data-aos-duration="1000" class="section__text text-center px-3 py-5 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center flex-column">
-      <p>Hey! I'm</p>
-      <h1>Arjad Gohar</h1>
-      <vue-typer text='FullStack Developer'></vue-typer>
-      <p class="intro-para mt-2"> 
-        I am a skilled software developer delivering high-quality solutions across diverse projects. My expertise spans front-end and back-end development, including Vue.js, React.js, Ruby on Rails and Python.
-      </p>
-      <p class='intro-para'>
-        I specialize in creating user-friendly interfaces and scalable systems to meet client needs. My passion lies in solving complex challenges with and effective solutions.
-      </p>
-      <div class="btn-container mt-3">
-        <button
-          class="btn btn-color-2 btn-black"
-          onclick="location.href='https://drive.google.com/file/d/1I24YNY6zHmmT7MtJzKVGk1kLrqlBnT3a/view?usp=sharing'"
-        >
-          View Resume
-        </button>
-        <button class="btn btn-color-1" @click="scrollToSection('contact')">
-          Contact Info
-        </button>
-      </div>
-      <div id="socials-container">
-        <i class="fa-brands fa-linkedin icon" @click="redirectTo('https://www.linkedin.com/in/arjad/')"></i>
-        <i class="icon fa-brands fa-github" @click="redirectTo('https://github.com/arjad')"></i>
-      </div>
-    </div>
-    <div class="pic_container col-lg-6 col-sm-12 d-flex justify-content-center alig-items-center">
-      <div class='pic_container_inner'>
-        <div class='green-bg'></div>
-        <img data-aos="fade-left" data-aos-duration="1000" zoomtastic src="../assets/me.png" alt="profile pic" />
+  <section id="summary" class="hero-section">
+    <!-- Glowing background orbs -->
+    <div class="orb orb-purple"></div>
+    <div class="orb orb-blue"></div>
+
+    <div class="hero-content d-flex flex-column align-items-center justify-content-center text-center">
+      <!-- Floating Dev Joke Card (Left) -->
+      <div class="floating-card card-left">
+        <transition name="fade" mode="out-in">
+          <p :key="currentJoke">{{ currentJoke }}</p>
+        </transition>
       </div>
 
+      <!-- Main Heading & Subtitle -->
+      <h1 class="hero-title">Arjad Gohar</h1>
+      <h2 class="hero-subtitle">Agentic AI & Full Stack Developer</h2>
+
+      <!-- Call to Action Buttons -->
+      <div class="hero-buttons d-flex gap-3 mt-4">
+        <button class="btn-hero btn-filled" @click="scrollToSection('projects')">VIEW WORK</button>
+        <button class="btn-hero btn-outlined" @click="scrollToSection('contact')">CONTACT</button>
+      </div>
+
+      <!-- Floating Quote Card (Right) -->
+      <div class="floating-card-quote card-right">
+        <transition name="fade" mode="out-in">
+          <span :key="currentQuote" class="quote-text">
+            " {{ currentQuote }} "
+          </span>
+        </transition>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import { VueTyper } from 'vue-typer';
-import html2pdf from 'html2pdf.js';
-
 export default {
-  components: {
-    'vue-typer': VueTyper,
+  data() {
+    return {
+      jokes: [
+        "My code works... on my machine.",
+        "I debug by yelling at my screen.",
+        "Professional coffee drinker.",
+        "There are 10 types of people: those who understand binary, and those who don't."
+      ],
+      quotes: [
+        "The only way to do great work is to love what you do.",
+        "Don't stop when you're tired. Stop when you're done.",
+        "Believe you can and you're halfway there.",
+        "Coding is the closest thing we have to magic."
+      ],
+      currentJokeIndex: 0,
+      currentQuoteIndex: 0,
+      jokeTimer: null,
+      quoteTimer: null
+    };
+  },
+  computed: {
+    currentJoke() {
+      return this.jokes[this.currentJokeIndex];
+    },
+    currentQuote() {
+      return this.quotes[this.currentQuoteIndex];
+    }
+  },
+  mounted() {
+    this.jokeTimer = setInterval(() => {
+      this.currentJokeIndex = (this.currentJokeIndex + 1) % this.jokes.length;
+    }, 4000);
+
+    this.quoteTimer = setInterval(() => {
+      this.currentQuoteIndex = (this.currentQuoteIndex + 1) % this.quotes.length;
+    }, 4500);
+  },
+  beforeDestroy() {
+    clearInterval(this.jokeTimer);
+    clearInterval(this.quoteTimer);
   },
   methods: {
-    redirectTo(url) {
-      window.location.href = url;
-    },
     scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -59,77 +89,227 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section__text {
-  height: 100%;
-  .intro-para {
-    max-width: 450px;
-  }
-}
-.pic_container {
-  height: 75vh;
-
-.pic_container_inner {
-    height: 420px;
-    width: 360px;
-    position: relative;
-    .green-bg{
-      position: absolute;
-      height:350px;
-      width:350px;
-      bottom: 20px;
-      border-radius:50%;
-      background: #47BA87;
-    } 
-
-  }
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #150f30 0%, #090514 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 20px;
 }
 
-#socials-container {
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  align-items: center;
 }
 
-.icon {
-  cursor: pointer;
-  height: 2rem;
-}
-.btn-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+/* Main typography and elements */
+.hero-title {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 5.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #c084fc 0%, #ffffff 60%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
-.btn {
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+/* Hero CTA buttons */
+.hero-buttons {
+  gap: 1.5rem;
+}
+
+.btn-hero {
+  padding: 0.85rem 2.2rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
-  border-radius: 2rem;
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
+  letter-spacing: 0.05em;
+  border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
 }
 
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
+.btn-filled {
+  background: #ffffff;
+  color: #0d0c15;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+
+  &:hover {
+    background: transparent;
+    color: #ffffff;
+    box-shadow: 0 4px 25px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
 }
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
+
+.btn-outlined {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+  }
 }
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+
+/* Floating Card Left (Dev Joke) */
+.floating-card {
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.25rem;
+  width: 260px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+  }
 }
-.btn-container {
-  gap: 1rem;
+
+/* Floating Card Right (Quotes) */
+.floating-card-quote {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  text-align: right;
+
+  .quote-text {
+    display: block;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+  .floating-card, .floating-card-quote {
+    position: static;
+    transform: none;
+    margin: 1.5rem auto;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+  }
+  .floating-card-quote {
+    text-align: center;
+  }
+  .hero-content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+  }
+}
+</style>
+
+<style lang="scss">
+/* Non-scoped: @keyframes MUST be non-scoped in Vue 2 or they silently break */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
+  transition: none !important;
+}
+
+.orb-purple {
+  width: 350px;
+  height: 350px;
+  background: #a855f7;
+  bottom: 10%;
+  left: 10%;
+  animation: floatPurple 4s ease-in-out infinite !important;
+}
+
+.orb-blue {
+  width: 400px;
+  height: 400px;
+  background: #3b82f6;
+  top: 15%;
+  right: 10%;
+  animation: floatBlue 5s ease-in-out infinite !important;
+}
+
+@keyframes floatPurple {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  33%  { transform: translate3d(120px, -60px, 0) scale(1.25); }
+  66%  { transform: translate3d(-60px, 80px, 0) scale(0.9); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes floatBlue {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-150px, 100px, 0) scale(1.2); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
 }
 </style>
