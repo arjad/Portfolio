@@ -15,7 +15,7 @@
       <!-- Main Heading & Subtitle -->
       <h1 class="hero-title">Arjad Gohar</h1>
       <h2 class="hero-subtitle">Agentic AI & Full Stack Developer</h2>
-      <p class="hero-tagline">I have businesses with website <span class="highlight-text">Evrper</span></p>
+      <p class="hero-tagline">I build fast, modern websites designed to <span class="highlight-text">help businesses grow.</span></p>
 
       <!-- Call to Action Buttons -->
       <div class="hero-buttons d-flex gap-3 mt-4 mb-4">
