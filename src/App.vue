@@ -45,12 +45,24 @@ export default {
 </script>
 
 <style lang="scss">
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+#app {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
 * { 
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma;
   transition: width 1s ease, height 1s ease, background-color 1s ease;
-
+  box-sizing: border-box;
 }
 ::-webkit-scrollbar {
   width: 15px;

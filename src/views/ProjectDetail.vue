@@ -60,10 +60,10 @@
 
         <div class="d-flex mt-4 flex-wrap actions-container">
           <a v-if="project.github" :href="project.github" target="_blank" class="btn btn-outline-dark rounded-pill px-4 mr-3 mb-2">
-            <i class="fa-brands fa-github mr-2"></i> GitHub
+            <i class="fa-brands fa-github mr-2"></i> Code
           </a>
           <a v-if="project.live" :href="project.live" target="_blank" class="btn btn-outline-success rounded-pill px-4 mb-2">
-            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i> Live Demo
+            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i> View
           </a>
         </div>
       </div>

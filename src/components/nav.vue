@@ -3,7 +3,7 @@
     <div class="navbar-pill d-flex justify-content-between align-items-center">
       <div class="profile-brand d-flex align-items-center" @click="scrollToSection('summary')">
         <img src="../assets/me.png" alt="Profile" class="profile-img" />
-        <span class="profile-name">My Profile</span>
+        <span class="profile-name">Arjad Gohar</span>
       </div>
       <ul class="d-flex mb-0 align-items-center nav-links">
         <li class="p-2 scroll-to" @click="scrollToSection('about')">About</li>

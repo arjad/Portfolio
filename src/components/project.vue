@@ -16,10 +16,10 @@
             </div>
             <div class="d-flex flex-wrap mt-2">
                 <a :href="project.github" target="_blank" class="btn me-2 mb-2" @click.stop>
-                  <i class="fa-brands fa-github mr-2"></i>GitHub
+                  <i class="fa-brands fa-github mr-2"></i>Code
                 </a>
                 <a :href="project.live" target="_blank" class="btn me-2 mb-2" @click.stop>
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>  Live Demo
+                  <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> View
                 </a>
             </div>
         </div>

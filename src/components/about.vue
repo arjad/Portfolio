@@ -1,5 +1,21 @@
 <template>
   <section id="about" class="container">
+    <div class="marquee-section mb-5">
+      <h5 class="text-center text-uppercase text-muted tracking-wider mb-4 fw-bold">Previously Worked With</h5>
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <div 
+            v-for="(client, index) in repeatedClients" 
+            :key="index" 
+            class="company-badge"
+          >
+            <img :src="client.icon" :alt="client.name" class="company-icon-img" />
+            <span class="company-name">{{ client.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <Heading :title="'About Me'" :subtitle="'Want to know me'" />
 
     <div class="position-relative">
@@ -80,7 +96,14 @@ export default {
   data() {
     return {
       activeSection: 'experience',
-      startDate: "2019-01-01"
+      startDate: "2019-01-01",
+      iconClients: [
+        { name: 'Lala', icon: '/projects/lala-icon.png' },
+        { name: 'Genuity', icon: '/projects/genuity-icon.png' },
+        { name: 'Evee', icon: '/projects/evee-icon.jpeg' },
+        { name: 'Azoom', icon: '/projects/azoom-icon.png' },
+        { name: 'Priwall', icon: '/projects/priwall-icon.png' },
+      ]
     };
   },
   computed: {
@@ -92,6 +115,14 @@ export default {
 
       return isFullYear ? yearsDifference : yearsDifference - 1;
     },
+    repeatedClients() {
+      return [
+        ...this.iconClients, 
+        ...this.iconClients, 
+        ...this.iconClients, 
+        ...this.iconClients
+      ];
+    }
   },
   methods: {
     setActiveSection(section) {
@@ -102,6 +133,10 @@ export default {
 </script>
 
 <style scoped>
+#about {
+  margin-top: 40vh;
+}
+
 .about-containers {
   gap: 2rem;
 }
@@ -141,9 +176,108 @@ ul {
   text-decoration: underline;
 }
 
+.marquee-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #f1f5f9;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 2.5rem 0;
+  overflow: hidden;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marqueeScroll 20s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.company-icon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 0 !important;
+}
+
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #374151;
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #a855f7;
+    transform: translateY(-2px);
+    background: transparent;
+    border: none !important;
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #about {
+    margin-top: 100px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .details-container h3 {
     font-size: 14px;
+  }
+}
+</style>
+
+<style lang="scss">
+.dark-mode {
+  .marquee-section {
+    background: rgba(18, 12, 38, 0.6) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .company-badge {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: #e2e8f0 !important;
+
+    &:hover {
+      background: transparent !important;
+      border: none !important;
+      color: #a855f7 !important;
+    }
   }
 }
 </style>

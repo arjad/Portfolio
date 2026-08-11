@@ -1,5 +1,10 @@
 <template>
   <section id="summary" class="hero-section">
+    <!-- Looping background video -->
+    <video autoplay loop muted playsinline class="hero-bg-video">
+      <source src="/ok.mp4" type="video/mp4">
+    </video>
+
     <!-- Glowing background orbs -->
     <div class="orb orb-purple"></div>
     <div class="orb orb-blue"></div>
@@ -15,9 +20,10 @@
       <!-- Main Heading & Subtitle -->
       <h1 class="hero-title">Arjad Gohar</h1>
       <h2 class="hero-subtitle">Agentic AI & Full Stack Developer</h2>
+      <p class="hero-tagline">I help businesses to grow with web services</p>
 
       <!-- Call to Action Buttons -->
-      <div class="hero-buttons d-flex gap-3 mt-4">
+      <div class="hero-buttons d-flex gap-3 mt-4 mb-4">
         <button class="btn-hero btn-filled" @click="scrollToSection('projects')">VIEW WORK</button>
         <button class="btn-hero btn-outlined" @click="scrollToSection('contact')">CONTACT</button>
       </div>
@@ -29,6 +35,15 @@
             " {{ currentQuote }} "
           </span>
         </transition>
+      </div>
+    </div>
+
+    <!-- Featured Overlapping Video Showcase (Half on Hero, Half Below) -->
+    <div class="overlapping-video-wrapper">
+      <div class="video-showcase-card">
+        <video autoplay loop muted playsinline controls class="showcase-video">
+          <source src="/ok.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </section>
@@ -92,13 +107,48 @@ export default {
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   background: radial-gradient(circle at 50% 50%, #150f30 0%, #090514 100%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: visible;
+  padding: 100px 20px 160px 20px;
+  margin-bottom: 220px;
+}
+
+.overlapping-video-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 20;
+  width: 90%;
+  max-width: 860px;
+}
+
+.video-showcase-card {
+  background: rgba(18, 12, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  border-radius: 20px;
   overflow: hidden;
-  padding: 80px 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(168, 85, 247, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 45px rgba(168, 85, 247, 0.45);
+  }
+}
+
+.showcase-video {
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  display: block;
 }
 
 
@@ -127,13 +177,35 @@ export default {
   margin-bottom: 1rem;
 }
 
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.35;
+}
+
 .hero-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: 1.3rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 650px;
   margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
 }
 
 /* Hero CTA buttons */
