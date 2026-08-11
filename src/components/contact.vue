@@ -1,32 +1,9 @@
 <template>
   <div>
     <footer class="footer-compact py-4" id="contact">
-      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-        <div class="copyright text-center text-md-start">
+      <div class="container text-center">
+        <div class="copyright">
           © 2026 Arjad Gohar. Built with <a href="https://github.com/arjad/Portfolio" target="_blank" class="accent-purple">Vue.js</a> • <a href="https://www.upwork.com/freelancers/~01a73a1abd70f9f27f" target="_blank" class="accent-purple">Contact me on Upwork</a>
-        </div>
-        <div class="socials-footer d-flex gap-3 justify-content-center">
-          <a class="social-link" href="https://www.linkedin.com/in/arjad/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a class="social-link" href="https://www.upwork.com/freelancers/~01a73a1abd70f9f27f" target="_blank" title="Contact me on Upwork">
-            <i class="fa-brands fa-upwork"></i>
-          </a>
-          <a class="social-link" href="https://github.com/arjad" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a class="social-link" href="https://medium.com/@arjadgohar14" target="_blank" title="Medium">
-            <i class="fa-solid fa-m"></i>
-          </a>
-          <a class="social-link" href="https://dev.to/arjad_gohar_f6d9b8938c997" target="_blank" title="Dev.to">
-            <i class="fa-brands fa-dev"></i>
-          </a>
-          <a class="social-link" href="https://dev.to/arjad_gohar_f6d9b8938c997" target="_blank" title="Discord">
-            <i class="fa-brands fa-discord"></i>
-          </a>
-          <a class="social-link" href="https://www.youtube.com/@ArjadsSimpleScripts" target="_blank" title="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
         </div>
       </div>
     </footer>

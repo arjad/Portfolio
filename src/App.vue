@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       isScrollDown: false,
-      darkMode: sessionStorage.getItem('darkMode') === 'true',
+      darkMode: sessionStorage.getItem('darkMode') !== 'false',
     };
   },
   mounted() {

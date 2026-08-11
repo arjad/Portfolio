@@ -9,7 +9,7 @@
         <div class="card-body shadow">
             <h5 class="card-title">{{ project.title }}</h5>
             <p class="card-text">{{ project.description }}</p>
-            <div class="d-flex flex-wrap mb-2">
+            <div class="d-flex flex-wrap mt-3 mb-2 tech-stack-wrapper">
               <span v-for="(tech, i) in project.technologies" :key="i" class="badge rounded-pill px-3 py-2 mx-1 mb-2 border border-dark">
                 {{ tech }}
               </span>
@@ -98,9 +98,16 @@
       transform: scale(1.02);
       z-index:2;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+  }
+}
+
+.tech-stack-wrapper {
+  margin-top: 1rem !important;
+}
+
+@media screen and (max-width: 576px) {
+  .tech-stack-wrapper {
+    margin-top: 1.25rem !important;
   }
 }
 </style>

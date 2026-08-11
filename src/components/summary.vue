@@ -1,10 +1,5 @@
 <template>
   <section id="summary" class="hero-section">
-    <!-- Looping background video -->
-    <video autoplay loop muted playsinline class="hero-bg-video">
-      <source src="/ok.mp4" type="video/mp4">
-    </video>
-
     <!-- Glowing background orbs -->
     <div class="orb orb-purple"></div>
     <div class="orb orb-blue"></div>
@@ -20,7 +15,7 @@
       <!-- Main Heading & Subtitle -->
       <h1 class="hero-title">Arjad Gohar</h1>
       <h2 class="hero-subtitle">Agentic AI & Full Stack Developer</h2>
-      <p class="hero-tagline">I help businesses to grow with web services</p>
+      <p class="hero-tagline">I have businesses with website <span class="highlight-text">Evrper</span></p>
 
       <!-- Call to Action Buttons -->
       <div class="hero-buttons d-flex gap-3 mt-4 mb-4">
@@ -167,7 +162,7 @@ export default {
 /* Main typography and elements */
 .hero-title {
   font-family: 'Outfit', 'Inter', sans-serif;
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -177,15 +172,10 @@ export default {
   margin-bottom: 1rem;
 }
 
-.hero-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  opacity: 0.35;
+.highlight-text {
+  color: #c084fc;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
 }
 
 .hero-subtitle {

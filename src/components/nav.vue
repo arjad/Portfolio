@@ -1,11 +1,14 @@
 <template>
   <div id="navigation" class="nav-container">
     <div class="navbar-pill d-flex justify-content-between align-items-center">
+      <!-- Profile Brand -->
       <div class="profile-brand d-flex align-items-center" @click="scrollToSection('summary')">
         <img src="../assets/me.png" alt="Profile" class="profile-img" />
         <span class="profile-name">Arjad Gohar</span>
       </div>
-      <ul class="d-flex mb-0 align-items-center nav-links">
+
+      <!-- Desktop Nav Links (Hidden on Mobile) -->
+      <ul class="d-none d-md-flex mb-0 align-items-center nav-links">
         <li class="p-2 scroll-to" @click="scrollToSection('about')">About</li>
         <li class="p-2 scroll-to" @click="scrollToSection('practicle_skills')">Skills</li>
         <li class="p-2 scroll-to" @click="scrollToSection('projects')">Projects</li>
@@ -21,7 +24,59 @@
           </label>
         </li>
       </ul>
+
+      <!-- Mobile Hamburger Toggle Button -->
+      <button class="hamburger-btn d-flex d-md-none align-items-center justify-content-center" @click="isMenuOpen = true" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
+
+    <!-- Mobile Side Popup Drawer -->
+    <transition name="slide-side">
+      <div v-if="isMenuOpen" class="mobile-drawer">
+        <div class="drawer-header d-flex justify-content-between align-items-center p-4 border-bottom border-secondary border-opacity-25">
+          <span class="profile-name text-white fw-bold fs-5">Arjad Gohar</span>
+          <button class="close-btn" @click="isMenuOpen = false" aria-label="Close Navigation Menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <ul class="drawer-links list-unstyled p-4 mb-0">
+          <li class="drawer-item py-3 border-bottom border-secondary border-opacity-25 d-flex align-items-center" @click="handleMobileNav('about')">
+            <i class="fa-solid fa-user me-3 text-muted"></i><span>About</span>
+          </li>
+          <li class="drawer-item py-3 border-bottom border-secondary border-opacity-25 d-flex align-items-center" @click="handleMobileNav('practicle_skills')">
+            <i class="fa-solid fa-code me-3 text-muted"></i><span>Skills</span>
+          </li>
+          <li class="drawer-item py-3 border-bottom border-secondary border-opacity-25 d-flex align-items-center" @click="handleMobileNav('projects')">
+            <i class="fa-solid fa-briefcase me-3 text-muted"></i><span>Projects</span>
+          </li>
+          <li class="drawer-item py-3 border-bottom border-secondary border-opacity-25 d-flex align-items-center" @click="handleMobileNav('journey')">
+            <i class="fa-solid fa-timeline me-3 text-muted"></i><span>Journey</span>
+          </li>
+          <li class="drawer-item py-3 border-bottom border-secondary border-opacity-25 d-flex align-items-center" @click="handleMobileNav('contact')">
+            <i class="fa-solid fa-envelope me-3 text-muted"></i><span>Contact</span>
+          </li>
+          
+          <li class="drawer-item pt-4 d-flex justify-content-between align-items-center">
+            <span class="text-white">Dark Mode</span>
+            <div>
+              <input type="checkbox" class="checkbox" id="checkbox-mobile" v-model="darkMode" @change="toggleDarkMode()">
+              <label for="checkbox-mobile" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </transition>
+
+    <!-- Backdrop Overlay for Mobile Drawer -->
+    <transition name="fade">
+      <div v-if="isMenuOpen" class="drawer-backdrop" @click="isMenuOpen = false"></div>
+    </transition>
   </div>
 </template>
 
@@ -29,7 +84,8 @@
 export default {
   data() {
     return {
-      darkMode: sessionStorage.getItem('darkMode') === 'true',
+      darkMode: sessionStorage.getItem('darkMode') !== 'false',
+      isMenuOpen: false
     };
   },
   mounted() {
@@ -48,6 +104,10 @@ export default {
       } else {
         if (appEl) appEl.classList.remove('dark-mode');
       }
+    },
+    handleMobileNav(sectionId) {
+      this.isMenuOpen = false;
+      this.scrollToSection(sectionId);
     },
     scrollToSection(sectionId) {
       if (this.$route.path !== '/') {
@@ -127,6 +187,92 @@ export default {
   }
 }
 
+.hamburger-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 290px;
+  max-width: 85vw;
+  height: 100vh;
+  background: rgba(18, 12, 38, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-header {
+  .close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.drawer-item {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  i {
+    margin-right: 1.25rem !important;
+    width: 22px;
+    text-align: center;
+  }
+
+  &:hover {
+    color: #ffffff;
+    padding-left: 0.5rem;
+  }
+}
+
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1999;
+}
+
+.slide-side-enter-active, .slide-side-leave-active {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slide-side-enter, .slide-side-leave-to {
+  transform: translateX(100%);
+}
+
 .checkbox {
   opacity: 0;
   position: absolute;
@@ -167,18 +313,8 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .nav-links {
-    gap: 0.5rem;
-    li.scroll-to {
-      font-size: 0.8rem;
-      padding: 0.25rem !important;
-    }
-  }
   .navbar-pill {
-    padding: 0.5rem 1rem;
-  }
-  .profile-name {
-    display: none;
+    padding: 0.5rem 1.25rem;
   }
 }
 </style>
