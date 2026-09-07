@@ -33,7 +33,7 @@
       <div class="col-6 col-md-3">
         <div class="stat-card p-3 text-center">
           <h3 class="stat-number mb-1 d-flex align-items-center justify-content-center gap-1">
-            5.0 <i class="fa-solid fa-star text-warning fs-5"></i>
+            5.0 <i class="fa-solid fa-star text-warning fs-2 ms-2 ml-2 "></i>
           </h3>
           <p class="stat-label m-0">Rating</p>
         </div>
@@ -42,6 +42,16 @@
         <div class="stat-card p-3 text-center">
           <h3 class="stat-number mb-1">15+</h3>
           <p class="stat-label m-0">Clients Worked With</p>
+        </div>
+      </div>
+    </div>
+
+    <Heading :title="'Industries'" :subtitle="'Sectors I Have Worked With'" />
+    <div class="industries-grid row justify-content-center g-3 my-4 mb-5" data-aos="fade-up">
+      <div v-for="(industry, index) in industries" :key="index" class="col-6 col-md-4">
+        <div class="industry-card p-4 text-center">
+          <i :class="industry.icon + ' industry-icon mb-3 fs-2 text-green'"></i>
+          <h5 class="industry-name m-0 fw-bold">{{ industry.name }}</h5>
         </div>
       </div>
     </div>
@@ -113,6 +123,11 @@ export default {
       activeSection: 'experience',
       startDate: "2019-01-01",
       expandedServiceId: null,
+      industries: [
+        { name: 'Medical & Healthcare', icon: 'fa-solid fa-stethoscope' },
+        { name: 'Interior Design', icon: 'fa-solid fa-couch' },
+        { name: 'E-commerce', icon: 'fa-solid fa-cart-shopping' }
+      ],
       iconClients: [
         { name: 'Lala', icon: '/projects/lala-icon.png' },
         { name: 'Genuity', icon: '/projects/genuity-icon.png' },
@@ -167,6 +182,18 @@ export default {
             'Cross-Platform Mobile UI Design',
             'Offline-First Capability & Local Storage',
             'Fast Asset Loading & App Performance'
+          ]
+        },
+        {
+          id: 'dev-ops',
+          title: 'DevOps & Cloud',
+          icon: 'fa-solid fa-server',
+          desc: 'Streamlining deployment processes, setting up robust CI/CD pipelines, and managing cloud infrastructure.',
+          details: [
+            'Docker & Containerization',
+            'CI/CD Pipelines (GitHub Actions)',
+            'Cloud Deployment (AWS, Vercel, Netlify)',
+            'Performance Monitoring & Security'
           ]
         }
       ]
@@ -236,14 +263,14 @@ ul {
 .verticle-line{
   width: 15px;
   height: 100%;
-  background: linear-gradient(to right, #a855f7 50%, #34495E 50%);
+  background: linear-gradient(to right, #42b883 50%, #34495E 50%);
 }
 .verticle-line-right{
   right:0;
 }
 
 .text-green{
-  color: #a855f7;
+  color: #42b883;
 }
 .text-blue{
   color: #34495E;
@@ -270,7 +297,8 @@ ul {
   font-family: 'Outfit', 'Inter', sans-serif;
   font-size: 2.4rem;
   font-weight: 800;
-  color: #111827;
+  font-style: italic;
+  color: #42b883;
   line-height: 1.1;
 }
 
@@ -283,6 +311,25 @@ ul {
 
 .text-warning {
   color: #f59e0b !important;
+}
+
+.industry-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(17, 24, 39, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+}
+.industry-name {
+  color: #111827;
 }
 
 .marquee-section {
@@ -346,7 +393,7 @@ ul {
   transition: all 0.3s ease;
 
   &:hover {
-    color: #a855f7;
+    color: #42b883;
     transform: translateY(-2px);
     background: transparent;
     border: none !important;
@@ -542,7 +589,7 @@ ul {
 <style lang="scss">
 .dark-mode {
   .marquee-section {
-    background: rgba(18, 12, 38, 0.6) !important;
+    background: rgba(40, 40, 40, 0.6) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
@@ -556,26 +603,26 @@ ul {
     &:hover {
       background: transparent !important;
       border: none !important;
-      color: #a855f7 !important;
+      color: #42b883 !important;
     }
   }
 
   .service-card {
-    background: rgba(18, 12, 38, 0.6) !important;
+    background: rgba(40, 40, 40, 0.6) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
 
     &::before {
       background: linear-gradient(
         120deg,
         transparent 0%,
-        rgba(168, 85, 247, 0.35) 50%,
+        rgba(66, 184, 131, 0.35) 50%,
         transparent 100%
       ) !important;
     }
 
     &:hover {
-      border-color: rgba(168, 85, 247, 0.5) !important;
-      box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25) !important;
+      border-color: rgba(66, 184, 131, 0.5) !important;
+      box-shadow: 0 15px 40px rgba(66, 184, 131, 0.25) !important;
     }
   }
 
@@ -597,7 +644,7 @@ ul {
   }
 
   .stat-card {
-    background: rgba(18, 12, 38, 0.6) !important;
+    background: rgba(40, 40, 40, 0.6) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
 
     &:hover {
@@ -612,6 +659,39 @@ ul {
 
   .stat-label {
     color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .industry-card {
+    background: rgba(40, 40, 40, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+    }
+  }
+
+  .industry-name {
+    color: #ffffff !important;
+  }
+
+  .service-icon-wrapper {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .service-icon {
+    color: #42b883 !important;
+  }
+
+  .expand-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+  }
+
+  .expand-btn:hover {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
   }
 }
 </style>

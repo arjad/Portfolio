@@ -66,17 +66,19 @@ html, body {
 }
 ::-webkit-scrollbar {
   width: 15px;
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: #888; 
   border-radius: 10px;
 }
-::selection {
-  background-color: lightgrey;
-}
+
 
 .dark-mode {
-  background: #0D1117;
+  background: #1A1A1A;
   color:white;
   .vue-typer {
     .custom.char {

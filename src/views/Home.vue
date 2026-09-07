@@ -2,7 +2,7 @@
   <div class="home">
     <Summary id="summary" />
     <About id="about" />
-    <Skills id="practicle_skills" />
+    <Skills v-if="$route.query.hide_skills !== 'true'" id="practicle_skills" />
     <Project id="projects" :limit="4" />
     <div class="container text-center mt-4 mb-5 pb-5">
       <router-link to="/projects" class="btn btn-custom-green px-4 rounded-pill shadow-sm">
@@ -40,13 +40,13 @@ export default {
 
 <style scoped>
 .btn-custom-green {
-  color: #a855f7;
-  border: 1px solid #a855f7;
+  color: #42b883;
+  border: 1px solid #42b883;
   background-color: transparent;
   transition: all 0.3s ease;
 }
 .btn-custom-green:hover {
-  background-color: #a855f7;
+  background-color: #42b883;
   color: white;
 }
 </style>

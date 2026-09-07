@@ -1,17 +1,6 @@
 <template>
   <section id="summary" class="hero-section">
-    <!-- Glowing background orbs -->
-    <div class="orb orb-purple"></div>
-    <div class="orb orb-blue"></div>
-
     <div class="hero-content d-flex flex-column align-items-center justify-content-center text-center">
-      <!-- Floating Dev Joke Card (Left) -->
-      <div class="floating-card card-left">
-        <transition name="fade" mode="out-in">
-          <p :key="currentJoke">{{ currentJoke }}</p>
-        </transition>
-      </div>
-
       <!-- Main Heading & Subtitle -->
       <h1 class="hero-title">Arjad Gohar</h1>
       <h2 class="hero-subtitle">Agentic AI & Full Stack Developer</h2>
@@ -23,13 +12,6 @@
         <button class="btn-hero btn-outlined" @click="scrollToSection('contact')">CONTACT</button>
       </div>
 
-      <!-- Floating Quote Card (Right) -->
-      <div class="floating-card-quote card-right">
-        <transition name="fade" mode="out-in">
-          <span :key="currentQuote" class="quote-text">
-            " {{ currentQuote }} "
-          </span>
-        </transition>
       </div>
     </div>
 
@@ -46,47 +28,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      jokes: [
-        "My code works... on my machine.",
-        "I debug by yelling at my screen.",
-        "Professional coffee drinker.",
-        "There are 10 types of people: those who understand binary, and those who don't."
-      ],
-      quotes: [
-        "The only way to do great work is to love what you do.",
-        "Don't stop when you're tired. Stop when you're done.",
-        "Believe you can and you're halfway there.",
-        "Coding is the closest thing we have to magic."
-      ],
-      currentJokeIndex: 0,
-      currentQuoteIndex: 0,
-      jokeTimer: null,
-      quoteTimer: null
-    };
-  },
-  computed: {
-    currentJoke() {
-      return this.jokes[this.currentJokeIndex];
-    },
-    currentQuote() {
-      return this.quotes[this.currentQuoteIndex];
-    }
-  },
-  mounted() {
-    this.jokeTimer = setInterval(() => {
-      this.currentJokeIndex = (this.currentJokeIndex + 1) % this.jokes.length;
-    }, 4000);
-
-    this.quoteTimer = setInterval(() => {
-      this.currentQuoteIndex = (this.currentQuoteIndex + 1) % this.quotes.length;
-    }, 4500);
-  },
-  beforeDestroy() {
-    clearInterval(this.jokeTimer);
-    clearInterval(this.quoteTimer);
-  },
   methods: {
     scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
@@ -103,7 +44,7 @@ export default {
   position: relative;
   width: 100%;
   min-height: 90vh;
-  background: radial-gradient(circle at 50% 50%, #150f30 0%, #090514 100%);
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,18 +65,18 @@ export default {
 }
 
 .video-showcase-card {
-  background: rgba(18, 12, 38, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 2px solid rgba(168, 85, 247, 0.4);
+  border: 2px solid rgba(66, 184, 131, 0.4);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(66, 184, 131, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 45px rgba(168, 85, 247, 0.45);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 45px rgba(66, 184, 131, 0.45);
   }
 }
 
@@ -166,23 +107,21 @@ export default {
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #c084fc 0%, #ffffff 60%, #cbd5e1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #111827;
   margin-bottom: 1rem;
 }
 
 .highlight-text {
-  color: #c084fc;
+  color: #42b883;
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
+  text-shadow: 0 0 10px rgba(66, 184, 131, 0.4);
 }
 
 .hero-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: 1.3rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: #111827;
   letter-spacing: 0.05em;
   margin-bottom: 0.75rem;
 }
@@ -191,7 +130,7 @@ export default {
   font-family: 'Inter', sans-serif;
   font-size: 1.15rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
+  color: #374151;
   max-width: 650px;
   margin-bottom: 2rem;
   letter-spacing: 0.02em;
@@ -215,27 +154,28 @@ export default {
 }
 
 .btn-filled {
-  background: #ffffff;
-  color: #0d0c15;
-  border: 1px solid #ffffff;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+  background: #42b883;
+  color: #ffffff;
+  border: 1px solid #42b883;
+  box-shadow: 0 4px 20px rgba(66, 184, 131, 0.3);
 
   &:hover {
     background: transparent;
-    color: #ffffff;
-    box-shadow: 0 4px 25px rgba(255, 255, 255, 0.3);
+    color: #42b883;
+    border-color: #42b883;
+    box-shadow: 0 4px 25px rgba(66, 184, 131, 0.4);
     transform: translateY(-2px);
   }
 }
 
 .btn-outlined {
   background: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #111827;
+  border: 1px solid rgba(17, 24, 39, 0.3);
 
   &:hover {
-    border-color: #ffffff;
-    background: rgba(255, 255, 255, 0.05);
+    border-color: #111827;
+    background: rgba(17, 24, 39, 0.05);
     transform: translateY(-2px);
   }
 }
@@ -246,19 +186,19 @@ export default {
   left: 2%;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   padding: 1.25rem;
   width: 260px;
   text-align: left;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
   p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.7);
+    color: #4b5563;
     font-size: 0.95rem;
     line-height: 1.5;
     font-family: 'Inter', sans-serif;
@@ -276,7 +216,7 @@ export default {
 
   .quote-text {
     display: block;
-    color: rgba(255, 255, 255, 0.65);
+    color: #4b5563;
     font-size: 1rem;
     font-style: italic;
     line-height: 1.6;
@@ -332,46 +272,20 @@ export default {
 </style>
 
 <style lang="scss">
-/* Non-scoped: @keyframes MUST be non-scoped in Vue 2 or they silently break */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.5;
-  z-index: 1;
-  pointer-events: none;
-  will-change: transform;
-  transition: none !important;
+.dark-mode .hero-title {
+  color: #ffffff;
 }
-
-.orb-purple {
-  width: 350px;
-  height: 350px;
-  background: #a855f7;
-  bottom: 10%;
-  left: 10%;
-  animation: floatPurple 4s ease-in-out infinite !important;
+.dark-mode .hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
 }
-
-.orb-blue {
-  width: 400px;
-  height: 400px;
-  background: #3b82f6;
-  top: 15%;
-  right: 10%;
-  animation: floatBlue 5s ease-in-out infinite !important;
+.dark-mode .hero-tagline {
+  color: rgba(255, 255, 255, 0.7);
 }
-
-@keyframes floatPurple {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  33%  { transform: translate3d(120px, -60px, 0) scale(1.25); }
-  66%  { transform: translate3d(-60px, 80px, 0) scale(0.9); }
-  100% { transform: translate3d(0, 0, 0) scale(1); }
+.dark-mode #summary .btn-outlined {
+  color: #ffffff;
+  border-color: #ffffff;
 }
-
-@keyframes floatBlue {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  50%  { transform: translate3d(-150px, 100px, 0) scale(1.2); }
-  100% { transform: translate3d(0, 0, 0) scale(1); }
+.dark-mode #summary .btn-outlined:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 </style>
