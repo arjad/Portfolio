@@ -3,6 +3,10 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import ProjectsList from '../views/ProjectsList.vue';
 import ProjectDetail from '../views/ProjectDetail.vue';
+import Essora from '../views/Essora.vue';
+import Simple from '../views/Simple.vue';
+
+
 
 Vue.use(VueRouter);
 
@@ -11,6 +15,16 @@ const routes = [
         path: '/',
         name: 'Home',
         component: Home
+    },
+    {
+        path: '/simple',
+        name: 'Simple',
+        component: Simple
+    },
+    {
+        path: '/essora',
+        name: 'Essora',
+        component: Essora
     },
     {
         path: '/projects/:category?',

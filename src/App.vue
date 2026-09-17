@@ -3,6 +3,7 @@
     <Nav />
     <router-view />
 
+    <Footer />
     <ChatBot/>
     <CanvasAnimation />
   </div>
@@ -10,6 +11,7 @@
 
 <script>
 import Nav from "./components/nav.vue";
+import Footer from "./components/Footer.vue";
 import ChatBot from "./components/features/chatbot.vue";
 import CanvasAnimation from "./components/features/canvas.vue";
 import { onMounted } from "vue";
@@ -18,6 +20,7 @@ import AOS from "aos";
 export default {
   components: {
     Nav,
+    Footer,
     ChatBot,
     CanvasAnimation,
   },
